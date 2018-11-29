@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+
+<suite name="OPLiveConnectSuite" >
+
+    <test name="LiveConnectTest">
+
+        <classes>
+            <class name="UiTests"/>
+
+        </classes>
+    </test>
+</suite>

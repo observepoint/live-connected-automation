@@ -1,0 +1,10 @@
+target/
+web-application.iml
+*/resources/ReportsOutput/*
+*/resources/OUTPUT/*
+*/resources/file*
+*/test-output/*
+test-output/
+
+.DS_Store
+.idea/
