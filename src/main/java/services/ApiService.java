@@ -48,16 +48,14 @@ public class ApiService {
         return objectMapper.readValue(response.getEntity().getContent(), Journey.class);
     }
 
-    public InitializedJourney createJourney(Journey createdDevice) throws IOException, InterruptedException {
+    public InitializedJourney createJourney(Journey createdDevice) throws IOException {
         HttpResponse response = sendPost(baseUrl + "manual-journeys/" + createdDevice.getId(), "{}");
-        Thread.sleep(10000); //time to wait for proxy will be started
 
         return objectMapper.readValue(response.getEntity().getContent(), InitializedJourney.class);
     }
 
-    public Action manageRecording(InitializedJourney initializedJourney, String status) throws IOException, InterruptedException {
+    public Action manageRecording(InitializedJourney initializedJourney, String status) throws IOException {
         HttpResponse response = sendPost(baseUrl + "manual-journeys/" + initializedJourney.getJourneyId() + "/runs/" + initializedJourney.getRunId() + "/control", "{\"request\":\"" + status + "\"}");
-        Thread.sleep(3000); //time to wait for proxy will be started
 
         return objectMapper.readValue(response.getEntity().getContent(), Action.class);
     }
